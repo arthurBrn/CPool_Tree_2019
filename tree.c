@@ -15,16 +15,21 @@ int wrong_number(int size)
 
 void base(int size)
 {
-    int half = size;
+    for (int b = 0; b < size; b++) {
+        my_putchar('\n');
+        my_putchar('|');
+    }
 }
 
 void star(int floor)
 {
-    for (int a = 0; a < floor; a++) {
-        for (int i = floor; i > 0; i--) {
-          my_putchar('*');
+    int floor_stocked = floor;
+    for (int a = 0; a < floor + 1; a++) {
+        for (int i = 0; i < floor_stocked; i++) {
+            my_putchar('*');
         }
         my_putchar('\n');
+        floor_stocked = floor_stocked - 2;
     }
 }
 
@@ -37,4 +42,5 @@ void tree(int size)
     for (int a = 0; a < size; a++) {
         star(floor);
     }
+    base(size);
 }
